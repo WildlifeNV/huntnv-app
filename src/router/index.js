@@ -3,6 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 // import views
 import Home from '../views/home/index.vue'
 import HuntDetails from '../views/hunt-details/index.vue'
+import MapPage from '@/views/map/index.vue'
 
 const routes = [
   {
@@ -15,6 +16,11 @@ const routes = [
     name: 'HuntDetails',
     props: true,
     component: HuntDetails
+  },
+  {
+    path: '/map',
+    name: 'Map',
+    component: MapPage
   }
   // {
   //   path: '/about',
