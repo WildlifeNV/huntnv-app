@@ -17,9 +17,9 @@
       <hnv-mobile-navbar class="lg:hidden" @toggle-menu="mobileMenuOpen = true" />
 
       <main class="flex-1 flex overflow-hidden">
-        <div class="flex-1 flex xl:overflow-hidden">
+        <!-- <div class="flex-1 flex xl:overflow-hidden"> -->
           <router-view />
-        </div>
+        <!-- </div> -->
       </main>
     </div>
   </div>
