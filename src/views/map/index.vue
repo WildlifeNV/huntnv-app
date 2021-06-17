@@ -2,6 +2,7 @@
   <div class="flex-1 flex xl:overflow-hidden">
     <!-- map area -->
     <section
+      id="map"
       aria-labelledby="primary-heading"
       class="min-w-0 flex-1 h-full flex flex-col overflow-hidden lg:order-last bg-olive-200"
     >
@@ -20,6 +21,7 @@
 </template>
 
 <script>
+import maplibregl from 'maplibre-gl'
 import { getHunts } from '@/services/hunt-services.js'
 
 export default {
@@ -29,6 +31,7 @@ export default {
       loading: true
     }
   },
+
   async created () {
     this.loading = true
 
@@ -36,6 +39,23 @@ export default {
     this.hunts = data
 
     this.loading = false
+  },
+
+  mounted () {
+    this.renderMap()
+  },
+
+  methods: {
+    renderMap () {
+      const map = new maplibregl.Map({
+        container: 'map',
+        style: 'https://api.maptiler.com/maps/topo/style.json?key=BJ5Us337tUIPtCCZeKV8',
+        center: [0, 0],
+        zoom: 1
+      })
+
+      this.map = map
+    }
   }
 }
 </script>
