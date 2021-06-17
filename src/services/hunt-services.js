@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const baseURL = 'https://huntnv-api-mkvuv.ondigitalocean.app'
+const baseURL = process.env.VUE_APP_API_URL
 
 const apiClient = axios.create({
   baseURL: baseURL,
