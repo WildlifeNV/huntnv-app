@@ -12,6 +12,7 @@
       <hd-map class="h-full col-span-2" />
     </div>
     <hu-small-card class="py-4" />
+    <hu-hunts-table />
   </div>
 </template>
 
@@ -21,6 +22,7 @@ import HuMainCard from '@/views/hunt-units/hu-main-card.vue'
 import HuSmallCard from '@/views/hunt-units/hu-small-cards.vue'
 import HuStats from '@/views/hunt-units/hu-stats.vue'
 import HdMap from '@/views/hunt-details/hd-map.vue'
+import HuHuntsTable from '@/views/hunt-units/hu-hunts-table.vue'
 
 // import api services
 import { getHuntUnit } from '@/services/hunt-services.js'
@@ -32,7 +34,8 @@ export default {
     HuMainCard,
     HuSmallCard,
     HuStats,
-    HdMap
+    HdMap,
+    HuHuntsTable
   },
   data () {
     return {
