@@ -7,15 +7,23 @@
       <span class="py-2">Mule Deer</span>
     </div>
     <hu-stats class="py-4" />
-    <hu-main-card class="h-auto w-auto" />
+    <div class="mt-4 grid grid-cols-4 space-x-4">
+      <hu-main-card class="col-span-2" />
+      <hd-map class="h-full col-span-2" />
+    </div>
     <hu-small-card class="py-4" />
   </div>
 </template>
 
 <script>
+// import vue components
 import HuMainCard from '@/views/hunt-units/hu-main-card.vue'
 import HuSmallCard from '@/views/hunt-units/hu-small-cards.vue'
 import HuStats from '@/views/hunt-units/hu-stats.vue'
+import HdMap from '@/views/hunt-details/hd-map.vue'
+
+// import api services
+import { getHuntUnit } from '@/services/hunt-services.js'
 
 export default {
   name: 'HuntUnits',
@@ -23,7 +31,19 @@ export default {
     // vue components
     HuMainCard,
     HuSmallCard,
-    HuStats
+    HuStats,
+    HdMap
+  },
+  data () {
+    return {
+      huntUnit: null
+    }
+  },
+  async created () {
+    // fetch huntUnit
+    await getHuntUnit().then((response) => {
+      this.huntUnit = response.data
+    })
   }
 }
 </script>
