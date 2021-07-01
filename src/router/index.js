@@ -30,8 +30,9 @@ const routes = [
     component: MapPage
   },
   {
-    path: '/hunt-units',
+    path: '/hunt-units/:id',
     name: 'HuntUnits',
+    props: true,
     component: HuntUnits
   }
   // {

@@ -1,6 +1,6 @@
 <template>
-  <div class="bg-gray-50 p-6">
-    <h3 class="font-bold text-xl text-black uppercase">Hunts</h3>
+  <div class="bg-gray-50 p-6 rounded-md shadow-md">
+    <h3 class="font-bold text-xl text-black uppercase py-4">Hunts</h3>
     <div class="rounded-md">
       <table class="min-w-full divide-y divide-gray-200">
         <thead class="bg-gray-100">
@@ -22,8 +22,8 @@
             </th>
           </tr>
         </thead>
-        <tbody v-if="hunt" class="bg-white divide-y divide-gray-200 capitalize">
-            <tr v-for="i in data" :key="i.hunt_id">
+        <tbody v-if="huntUnit" class="bg-white divide-y divide-gray-200 capitalize">
+            <tr v-for="i in huntUnit.hunts" :key="i.hunt_id">
               <td class="px-2 py-4 whitespace-nowrap text-xs sm:text-sm font-medium text-gray-900">
                 {{ i.display_name }}
               </td>
@@ -45,3 +45,10 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  name: 'HuntUnitsTable',
+  props: ['huntUnit']
+}
+</script>
