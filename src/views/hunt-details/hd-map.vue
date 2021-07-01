@@ -81,7 +81,8 @@ export default {
           source: 'hunt_units',
           layout: {},
           paint: {
-            'line-color': 'orange'
+            'line-color': 'orange',
+            'line-width': 3
           }
         })
         // get coordinates from hunt multipolygon if valid

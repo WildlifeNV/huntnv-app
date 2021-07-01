@@ -13,7 +13,7 @@
         </a>
       </div>
     </div>
-    <hu-stats class="py-4" />
+    <hu-stats :huntUnit="huntUnit" class="py-4" />
     <div class="mt-4 grid grid-cols-1 lg:grid-cols-2 space-x-4">
       <hu-main-card class="col-span-1" />
       <hd-map :hunt_units="hunt_units" class="h-full col-span-1" />

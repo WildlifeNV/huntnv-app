@@ -8,7 +8,7 @@
             Total Square Miles
           </dt>
           <dd class="mt-1 text-3xl font-semibold text-gray-900">
-            71,897
+            {{ setSquareMiles }}
           </dd>
         </div>
       </div>
@@ -42,10 +42,18 @@
 import { ArrowsExpandIcon, ChartPieIcon, SelectorIcon } from '@heroicons/vue/outline'
 
 export default {
+  name: 'HdStats',
+  props: ['huntUnit'],
   components: {
     ArrowsExpandIcon,
     ChartPieIcon,
     SelectorIcon
+  },
+  computed: {
+    setSquareMiles () {
+      const area = (this.huntUnit.area / 2590000)
+      return area.toFixed(2)
+    }
   }
 }
 </script>
