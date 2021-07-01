@@ -23,13 +23,18 @@ const getHuntFeature = (id) => {
   return apiClient.get(`/features/hunt_geometries/${id}.geojson`)
 }
 
-const getHuntUnitFeatures = (units) => {
-  return apiClient.get(`/features/hunt_units.geojson?hunt_units=${units}`)
+const getHuntUnit = (id) => {
+  return apiClient.get(`/hunt-units/${id}`)
+}
+
+const getHuntUnitFeatures = (id) => {
+  return apiClient.get(`/features/hunt_units.geojson?hunt_units=${id}`)
 }
 
 export {
   getHunts,
   getHunt,
   getHuntFeature,
-  getHuntUnitFeatures
+  getHuntUnitFeatures,
+  getHuntUnit
 }

@@ -5,6 +5,7 @@ import Home from '../views/home/index.vue'
 import HuntDetails from '../views/hunt-details/index.vue'
 import MapPage from '@/views/map/index.vue'
 import HuntsPage from '@/views/hunts/index.vue'
+import HuntUnits from '@/views/hunt-units/index.vue'
 
 const routes = [
   {
@@ -27,6 +28,12 @@ const routes = [
     path: '/map',
     name: 'Map',
     component: MapPage
+  },
+  {
+    path: '/hunt-units/:id',
+    name: 'HuntUnits',
+    props: true,
+    component: HuntUnits
   }
   // {
   //   path: '/about',

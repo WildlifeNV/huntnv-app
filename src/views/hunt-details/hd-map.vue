@@ -2,7 +2,7 @@
   <section
     id="map"
     aria-labelledby="primary-heading"
-    class="min-w-0 h-3/6 flex flex-col overflow-hidden lg:order-last bg-olive-200"
+    class="min-w-0 h-3/6 flex flex-col overflow-hidden lg:order-last bg-olive-200 rounded-md shadow-md"
   >
     <h1
       id="primary-heading"
