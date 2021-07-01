@@ -84,16 +84,29 @@ export default {
             'line-color': 'orange'
           }
         })
-        // get coordinates from geojson multipolygon
-        const coordinates = this.geojson.features[0].geometry.coordinates[0][0]
-        // set bounds based on the coordinates from the multipolygon
-        const bounds = coordinates.reduce(function (bounds, coord) {
-          return bounds.extend(coord)
-        }, new maplibregl.LngLatBounds(coordinates))
-        // set the map bounds based on the bounds from the miltipolygon
-        map.fitBounds(bounds, {
-          padding: 20
-        })
+        // get coordinates from hunt multipolygon if valid
+        if (this.geojson) {
+          const coordinates = this.geojson.features[0].geometry.coordinates[0][0]
+          // set bounds based on the coordinates from the multipolygon
+          const bounds = coordinates.reduce(function (bounds, coord) {
+            return bounds.extend(coord)
+          }, new maplibregl.LngLatBounds(coordinates))
+          // set the map bounds based on the bounds from the miltipolygon
+          map.fitBounds(bounds, {
+            padding: 20
+          })
+        } else {
+          // else get coordinates from hunt units multipolygon
+          const coordinates = this.hunt_units.features[0].geometry.coordinates[0][0]
+          // set bounds based on the coordinates from the hunt unit
+          const bounds = coordinates.reduce(function (bounds, coord) {
+            return bounds.extend(coord)
+          }, new maplibregl.LngLatBounds(coordinates))
+          // set the map bounds based on the hunt unit coordinates
+          map.fitBounds(bounds, {
+            padding: 20
+          })
+        }
       })
       // // on click create popup at cursor location
       // map.on('click', 'huntUnitsLayer-fill', function (e) {
