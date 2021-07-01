@@ -1,6 +1,6 @@
 <template>
   <div class="bg-gray-50 p-6 rounded-md shadow-md">
-    <h3 class="font-bold text-xl text-black uppercase py-4">Hunts</h3>
+    <h3 class="font-bold text-xl text-black uppercase pb-2">Hunts</h3>
     <div class="rounded-md">
       <table class="min-w-full divide-y divide-gray-200">
         <thead class="bg-gray-100">

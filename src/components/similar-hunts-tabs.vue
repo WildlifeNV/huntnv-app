@@ -71,9 +71,6 @@ export default {
       const result = Object.values(data)
       this.results = result
     }
-  },
-  filter () {
-    console.log('this')
   }
 }
 </script>

@@ -95,21 +95,21 @@ export default {
           padding: 20
         })
       })
-      // on click create popup at cursor location
-      map.on('click', 'huntUnitsLayer-fill', function (e) {
-        new maplibregl.Popup()
-          .setLngLat(e.lngLat)
-          .setHTML(e.features[0].properties.display_name)
-          .addTo(map)
-      })
-      // change the cursor to a pointer when the mouse is over the states layer.
-      map.on('mouseenter', 'huntUnitsLayer-fill', function () {
-        map.getCanvas().style.cursor = 'pointer'
-      })
-      // change it back to a pointer when it leaves.
-      map.on('mouseleave', 'huntUnitsLayer-fill', function () {
-        map.getCanvas().style.cursor = ''
-      })
+      // // on click create popup at cursor location
+      // map.on('click', 'huntUnitsLayer-fill', function (e) {
+      //   new maplibregl.Popup()
+      //     .setLngLat(e.lngLat)
+      //     .setHTML(e.features[0].properties.display_name)
+      //     .addTo(map)
+      // })
+      // // change the cursor to a pointer when the mouse is over the states layer.
+      // map.on('mouseenter', 'huntUnitsLayer-fill', function () {
+      //   map.getCanvas().style.cursor = 'pointer'
+      // })
+      // // change it back to a pointer when it leaves.
+      // map.on('mouseleave', 'huntUnitsLayer-fill', function () {
+      //   map.getCanvas().style.cursor = ''
+      // })
     }
   }
 }
